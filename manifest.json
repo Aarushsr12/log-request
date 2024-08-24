@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "WebRequest and Content Script Example",
+  "version": "1.0",
+  "permissions": [
+    "webRequest",
+    "webNavigation",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://www.booking.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.booking.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
